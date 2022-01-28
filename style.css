@@ -1,0 +1,112 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+.wrapper {
+    height: 100vh;
+    background: linear-gradient(180deg, #69b7eb, #b3dbd3, #f4d6db);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button {
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    box-shadow: 3px 3px 10px rgb(88, 88, 88);
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 50px;
+}
+.but_text {
+    position: relative;
+    text-align: center;
+    color: rgb(106, 116, 255);
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 50px;
+    border-radius: 50px;
+    height: 80px;
+    transition: all 1s ease 0s;
+    top: 0;
+    overflow: hidden;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+.but_text::before,
+.but_text::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    transition: all 0.5s ease 0s;
+}
+.but_text::before {
+    left: 0;
+    z-index: 2;
+}
+.but_text::after {
+    right: 0;
+}
+.but_text span {
+    position: relative;
+    z-index: 2;
+}
+.button::before,
+.button::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 3px solid rgb(114, 27, 212);
+    top: -20px;
+    left: 50%;
+    z-index: 1;
+    margin: 0 0 0 -20px;
+    transition: all 0.5s ease 0s;
+    border-radius: 15px;
+}
+.button::before {
+    animation: rotate 15s infinite linear;
+}
+.button::after {
+    animation: rotate_another 5s infinite linear;
+}
+.button:hover::before,
+.button:hover::after {
+    left: 100%;
+    opacity: 0;
+}
+.button:hover .but_text:before,
+.button:hover .but_text:after {
+    background-color: rgb(106, 116, 255);
+
+}
+.button:hover .but_text::before {
+    width: 100%;
+}
+.button:hover .but_text {
+    color: #fff;
+    top: -5px;
+    transition: all 0.5 ease 0.2s;
+    box-shadow: 0px 5px 0px 0 rgb(70, 78, 182);
+}
+@keyframes rotate{
+    0% {
+    transform: rotate(0deg);
+    }
+    100% {
+    transform: rotate(360deg);
+    }
+}
+@keyframes rotate_another{
+    0% {
+    transform: rotate(360deg);
+    }
+    100% {
+    transform: rotate(0deg);
+    }
+}
